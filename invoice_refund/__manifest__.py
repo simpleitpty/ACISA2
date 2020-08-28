@@ -19,7 +19,7 @@
     # always loaded
     'data': [
         'views/account_invoice_view.xml',
-        'wizard/account_invoice_refund.xml',
+        'wizards/account_invoice_refund.xml',
     ],
     # only loaded in demonstration mode
     'demo': [],
