@@ -8,7 +8,7 @@ class AccountInvoiceRefund(models.TransientModel):
 
     _inherit = "account.invoice.refund"
 
-    journal_id = fields.Many2one('account.journal', 'Diario', domain="[('type_report','in',['anu','ndc'])]")
+    journal_id = fields.Many2one('account.journal', 'Diario')
     sale = fields.Boolean('Es Venta?', compute='_is_sale')
 
     @api.depends('date_invoice')
