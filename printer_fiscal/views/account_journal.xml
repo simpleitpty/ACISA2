@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="printer_account_journal_form_inherit" model="ir.ui.view">
+            <field name="name">printer_account_journal_form_inherit</field>
+            <field name="model">account.journal</field>
+            <field name="inherit_id" ref="account.view_account_journal_form"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='type']" position="after">
+                    <field name="serial_printer"
+                           attrs="{'invisible': [('type', '!=', 'sale')]}"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
