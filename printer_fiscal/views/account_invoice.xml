@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="print_fiscal_view" model="ir.ui.view">
+            <field name="name">print_fiscal_view</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <xpath expr="//h1[hasclass('mt0')]" position="inside">
+                    <div>
+                        <field name="num_doc_fiscal"
+                               readonly="1"
+                               class="oe_inline"
+                               attrs="{'invisible': [('is_print', '!=', True)]}"/>
+                    </div>
+                </xpath>
+                <xpath expr="//field[@name='user_id']" position="before">
+                    <field name="is_print"
+                           readonly="1"
+                           attrs="{'invisible': [('state', 'in', ('draft',))]}"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
