@@ -1,0 +1,4 @@
+[submodule "dev-psdc/fpipack_12"]
+	path = dev-psdc/fpipack_12
+	url = git@github.com:dev-psdc/fpipack_12.git
+	branch = master
