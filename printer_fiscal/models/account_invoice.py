@@ -14,9 +14,12 @@ class AccountInvoice(models.Model):
         i = 0
         n = "0123456789"
         num = self.number
-        for letra in num:
-            i += 1
-            if letra not in n:
-                long = i
-        number = num[long:]
+        if num:
+            for letra in num:
+                i += 1
+                if letra not in n:
+                    long = i
+            number = num[long:]
+        else:
+            number = False
         return number
