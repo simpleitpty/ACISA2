@@ -15,7 +15,7 @@
     'category': 'Contabilidad',
     'version': '0.2',
     # any module necessary for this one to work correctly
-    'depends': ['base' ,'account'],
+    'depends': ['base' ,'account', 'printer_fiscal'],
     # always loaded
     'data': [
         'views/account_invoice_view.xml',
