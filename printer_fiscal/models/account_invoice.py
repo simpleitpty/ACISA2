@@ -10,12 +10,13 @@ class AccountInvoice(models.Model):
     number_integer = fields.Char('Numero', compute='numeracion', store=True)
 
     @api.one
-    def numeracion(self, num):
+    def numeracion(self):
         i = 0
         n = "0123456789"
-        for l in num:
+        num = self.number
+        for letra in num:
             i += 1
-            if l not in n:
+            if letra not in n:
                 long = i
         number = num[long:]
         return number
