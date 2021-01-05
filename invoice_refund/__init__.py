@@ -12,7 +12,7 @@ def invoices_refunds(cr, registry):
             ('state','=','paid'),])
   for inv_id in inv_ids:
     #print(inv_id,'Id')
-    refund_id = inv_obj.search([('origin','=',inv_id.number)],limit=1)
+    refund_id = inv_obj.search([('origin','=',inv_id.number)], limit=1)
     #print(refund_id,'Refun')
     if refund_id:
       refund_data = inv_obj.browse(refund_id.id)

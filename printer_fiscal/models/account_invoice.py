@@ -11,10 +11,10 @@ class AccountInvoice(models.Model):
 
     @api.depends('number')
     def _numeracion(self):
-        i = 0
         n = "0123456789"
         for record in self:
             num = record.number
+            i = 0
             if num:
                 for letra in num:
                     i += 1
